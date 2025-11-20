@@ -35,19 +35,6 @@ I/O yoğunluğu yüksek olan bu sorunun çözümü, **eş zamanlılık** sağlam
 1.  **Paralel Görev Atama:** Her bir port bağlantı denemesi ayrı bir **İş Parçacığına (Thread)** atanır.
 2.  **I/O Beklemesini Maskeleme:** Bir thread ağdan cevap beklerken (I/O beklemesi), CPU hemen diğer thread'i çalıştırır. CPU, boş kalmak yerine thread'ler arasında hızla geçiş yapar.
 3.  **Süre Kazanımı:** Threading sayesinde, 80 farklı bekleme süresi üst üste toplanmak yerine, hepsi **aynı anda** çalışıyormuş gibi görünür.
-
-### 🐍 Uygulanan Kritik Kod Bloğu
-
-Bu performans artışını sağlayan temel kod yapısı şudur:
-
-```python
-# Threading kullanılan eş zamanlı tarama
-for port in range(baslangic, bitis + 1):  
-    # Her port için yeni bir thread oluşturulur
-    thread = threading.Thread(target=tarama_portu, args=(hedef, port))
-    
-    # Thread başlatılır; program bu noktada beklemez.
-    thread.start()
 ### 📉 Sonuç: Performans Artışı Tablosu
 
 Threading ile tarama süresi, toplam bekleme süresi olmaktan çıkıp, sadece en uzun tek bir bekleme süresine düştü.
@@ -71,3 +58,17 @@ Bu analiz, sadece çalışan bir kod yazmak yerine, **performans engellerini aş
 Bu projenin arkasındaki performans kararlarını merak ediyor musunuz?
 
 ➡️ **Makale:** [Python ile 1 Saniyede Binlerce Port Taramak: Threading ve I/O İşlemlerinin Sırrı](Makalenizin_linki)
+
+
+### 🐍 Uygulanan Kritik Kod Bloğu
+
+Bu performans artışını sağlayan temel kod yapısı şudur:
+
+```python
+# Threading kullanılan eş zamanlı tarama
+for port in range(baslangic, bitis + 1):  
+    # Her port için yeni bir thread oluşturulur
+    thread = threading.Thread(target=tarama_portu, args=(hedef, port))
+    
+    # Thread başlatılır; program bu noktada beklemez.
+    thread.start()
