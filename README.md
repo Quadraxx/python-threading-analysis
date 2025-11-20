@@ -48,3 +48,26 @@ for port in range(baslangic, bitis + 1):
     
     # Thread başlatılır; program bu noktada beklemez.
     thread.start()
+### 📉 Sonuç: Performans Artışı Tablosu
+
+Threading ile tarama süresi, toplam bekleme süresi olmaktan çıkıp, sadece en uzun tek bir bekleme süresine düştü.
+
+| Özellik | Senkron (Sıralı) | Threading (Eş Zamanlı) |
+| :--- | :--- | :--- |
+| **Hedeflenen Engel** | I/O Beklemesi | I/O Beklemesi |
+| **80 Port Tahmini Süre** | ~ 8 saniye | **~ 0.1 saniye** |
+| **Kazanılan Verim** | Düşük | **%99 zaman tasarrufu** |
+
+---
+
+### Sonuç: Doğru Aracı Seçmek
+
+Bu proje, bir geliştiricinin doğru teknik kararı vermesinin önemini göstermektedir: Bir I/O problemine (ağ beklemeleri) karşı en etkili ve pratik çözüm **threading** olmuştur.
+
+Bu analiz, sadece çalışan bir kod yazmak yerine, **performans engellerini aşabilen ve doğru teknik kararları verebilen** bir geliştirici olduğumu kanıtlamaktadır.
+
+---
+### 📚 Derinlemesine Analiz
+Bu projenin arkasındaki performans kararlarını merak ediyor musunuz?
+
+➡️ **Makale:** [Python ile 1 Saniyede Binlerce Port Taramak: Threading ve I/O İşlemlerinin Sırrı](Makalenizin_linki)
