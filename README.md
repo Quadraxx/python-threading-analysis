@@ -57,7 +57,7 @@ Bu analiz, sadece çalışan bir kod yazmak yerine, **performans engellerini aş
 ### 📚 Derinlemesine Analiz
 Bu projenin arkasındaki performans kararlarını merak ediyor musunuz?
 
-➡️ **Makale:** [Python ile 1 Saniyede Binlerce Port Taramak: Threading ve I/O İşlemlerinin Sırrı]([Makalenizin_linki](https://github.com/Quadraxx/python-threading-analysis/blob/main/Python%20ile%20H%C4%B1zl%C4%B1%20Port%20Taramas%C4%B1.docx))
+➡️ **Makale:** [Python ile 1 Saniyede Binlerce Port Taramak: Threading ve I/O İşlemlerinin Sırrı](https://github.com/Quadraxx/python-threading-analysis/blob/main/Python%20ile%20H%C4%B1zl%C4%B1%20Port%20Taramas%C4%B1.docx)
 
 
 ### 🐍 Uygulanan Kritik Kod Bloğu
